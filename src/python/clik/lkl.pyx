@@ -115,7 +115,7 @@ cdef class clik:
       er=doError(self.err)
       if er:
         raise er
-      cdic_free(&opt_dic)
+      cdic_free(<void**>&opt_dic)
     else:
       self.celf = clik_init(filename.encode(),self.err)
       er=doError(self.err)
